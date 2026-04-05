@@ -141,7 +141,7 @@ function renderCard(p) {
       </div>
       <div class="card-footer">
         <button class="btn-ficha" onclick="event.stopPropagation(); openModal('${escapeHTML(p.id)}')">
-          Ver ficha <span class="arrow">→</span>
+          Ver ficha técnica  <span class="arrow">→</span>
         </button>
       </div>
     </div>`;
