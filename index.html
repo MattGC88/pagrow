@@ -29,9 +29,9 @@
         />
         <meta
             property="og:image"
-            content="assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
+            content="https://pagrow.es/assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
         />
-        <meta property="og:url" content="/" />
+        <meta property="og:url" content="https://pagrow.es/" />
         <meta property="og:locale" content="es_EC" />
 
         <!-- Twitter -->
@@ -46,8 +46,18 @@
         />
         <meta
             name="twitter:image"
-            content="assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
+            content="https://pagrow.es/assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
         />
+
+        <!-- Security Headers (meta fallback — enforce via server headers in production) -->
+        <meta http-equiv="Content-Security-Policy"
+              content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+
+        <!-- Canonical -->
+        <link rel="canonical" href="https://pagrow.es/" />
 
         <!-- Favicon -->
         <link
@@ -56,6 +66,34 @@
             sizes="32x32"
             href="assets/images/favicon/favicon-32x32.webp"
         />
+        <link
+            rel="apple-touch-icon"
+            href="assets/images/favicon/favicon-32x32.webp"
+        />
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Pagrow S.A.",
+          "url": "https://pagrow.es",
+          "logo": "https://pagrow.es/assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp",
+          "description": "Bioestimulantes, correctores nutricionales, desbloqueadores de suelo y microorganismos para potenciar cultivos en Ecuador.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Ecuador"
+          }
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Pagrow – Catálogo de Productos Agrícolas",
+          "url": "https://pagrow.es"
+        }
+        </script>
 
         <link rel="stylesheet" href="assets/css/styles.css" />
     </head>

@@ -5,6 +5,15 @@ let activeCategory = "all";
 let searchQuery = "";
 let openProduct = null;
 
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 // ════════════════════════════════════════════
 //  RENDER
 // ════════════════════════════════════════════
@@ -60,12 +69,12 @@ function renderCatalog() {
   function buildBanner(id, title, description) {
     const eyebrow = eyebrows[id] || "";
     const descBlock = description
-      ? `<div class="cat-desc-wrap"><p class="cat-desc">${description}</p></div>`
+      ? `<div class="cat-desc-wrap"><p class="cat-desc">${escapeHTML(description)}</p></div>`
       : "";
     return `
-      <div class="cat-banner banner-${id}">
+      <div class="cat-banner banner-${escapeHTML(id)}">
         <div class="cat-banner-inner">
-          ${eyebrow ? `<div class="cat-eyebrow">${eyebrow}</div>` : ""}
+          ${eyebrow ? `<div class="cat-eyebrow">${escapeHTML(eyebrow)}</div>` : ""}
           <div class="cat-title">${title}</div>
           ${descBlock}
         </div>
@@ -78,7 +87,7 @@ function renderCatalog() {
       name: "Resultados",
       description: "",
     };
-    const displayName = searchQuery ? `Búsqueda: "${searchQuery}"` : cat.name;
+    const displayName = searchQuery ? `Búsqueda: "${escapeHTML(searchQuery)}"` : escapeHTML(cat.name);
     const desc = searchQuery ? "" : cat.description || "";
     container.innerHTML =
       buildBanner(cat.id || "raices", displayName, desc) +
@@ -116,20 +125,20 @@ function renderCatalog() {
 
 function renderCard(p) {
   return `
-    <div class="product-card ${p.cssClass}${p.badge ? " has-badge" : ""}" data-id="${p.id}" role="button" tabindex="0">
-      ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ""}
+    <div class="product-card ${escapeHTML(p.cssClass)}${p.badge ? " has-badge" : ""}" data-id="${escapeHTML(p.id)}" role="button" tabindex="0">
+      ${p.badge ? `<div class="product-badge">${escapeHTML(p.badge)}</div>` : ""}
       <div class="card-image">
-        <img src="${p.image || "assets/images/placeholder.webp"}" alt="${p.name}" width="400" height="300" loading="lazy">
+        <img src="${escapeHTML(p.image || "assets/images/placeholder.webp")}" alt="${escapeHTML(p.name)}" width="400" height="300" loading="lazy">
       </div>
       <div class="card-top">
-        <span class="cat-tag">${p.tag}</span>
+        <span class="cat-tag">${escapeHTML(p.tag)}</span>
       </div>
       <div class="card-body">
-        <div class="product-name">${p.name}</div>
-        <div class="product-desc">${p.shortDesc}</div>
+        <div class="product-name">${escapeHTML(p.name)}</div>
+        <div class="product-desc">${escapeHTML(p.shortDesc)}</div>
       </div>
       <div class="card-footer">
-        <button class="btn-ficha" onclick="event.stopPropagation(); openModal('${p.id}')">
+        <button class="btn-ficha" onclick="event.stopPropagation(); openModal('${escapeHTML(p.id)}')">
           Ver ficha técnica <span class="arrow">→</span>
         </button>
       </div>
@@ -156,34 +165,35 @@ window.openModal = function (id) {
       (b) => `
     <li class="benefit-item">
       <span class="benefit-dot">✓</span>
-      <span>${b}</span>
+      <span>${escapeHTML(b)}</span>
     </li>`,
     )
     .join("");
 
+  const safePdf = p.pdf && p.pdf.startsWith("assets/") ? escapeHTML(p.pdf) : null;
   document.getElementById("modalBody").innerHTML = `
-    <p class="modal-desc">${p.fullDesc}</p>
+    <p class="modal-desc">${escapeHTML(p.fullDesc)}</p>
     <div class="info-grid">
       <div class="info-card">
         <div class="info-card-label">Aplicación</div>
-        <div class="info-card-value">${p.application.split(".")[0]}</div>
+        <div class="info-card-value">${escapeHTML(p.application.split(".")[0])}</div>
       </div>
       <div class="info-card">
         <div class="info-card-label">Tipo</div>
-        <div class="info-card-value">${p.tag}</div>
+        <div class="info-card-value">${escapeHTML(p.tag)}</div>
       </div>
     </div>
     <div class="benefits-title">Beneficios principales</div>
     <ul class="benefits-list">${benefitsHTML}</ul>
     <div class="composition-box">
       <div class="composition-title">Composición</div>
-      <div class="composition-text">${p.composition}</div>
+      <div class="composition-text">${escapeHTML(p.composition)}</div>
     </div>
 
     <div class="modal-actions">
       ${
-        p.pdf
-          ? `<a href="${p.pdf}" class="btn-download" target="_blank" rel="noopener">
+        safePdf
+          ? `<a href="${safePdf}" class="btn-download" target="_blank" rel="noopener noreferrer">
         Ver ficha técnica (PDF)
       </a>`
           : ""
