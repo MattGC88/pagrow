@@ -61,7 +61,7 @@ function renderCatalog() {
   // Eyebrow labels per category id
   const eyebrows = {
     bioestimulantes: "Bioestimulantes",
-    suelo: "Biología del suelo",
+    suelo: "Desbloqueo y establecimiento de microorganismos",
     correctores: "Nutrición foliar",
     micro: "Microorganismos",
   };
@@ -364,6 +364,8 @@ renderCatalog();
   renderCatalog();
   // Small delay so the page has laid out before scrolling
   setTimeout(() => {
-    document.getElementById("catalogBody").scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("catalogBody")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
   }, 100);
 })();
