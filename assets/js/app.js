@@ -348,3 +348,22 @@ function updateCounts() {
 // ════════════════════════════════════════════
 updateCounts();
 renderCatalog();
+
+// ════════════════════════════════════════════
+//  HASH ROUTING
+// ════════════════════════════════════════════
+(function () {
+  const VALID = ["bioestimulantes", "suelo", "correctores", "micro"];
+  const hash = window.location.hash.slice(1); // strip leading #
+  if (!VALID.includes(hash)) return;
+
+  activeCategory = hash;
+  document.querySelectorAll(".tab-chip").forEach((c) => {
+    c.classList.toggle("active", c.dataset.cat === hash);
+  });
+  renderCatalog();
+  // Small delay so the page has laid out before scrolling
+  setTimeout(() => {
+    document.getElementById("catalogBody").scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 100);
+})();
