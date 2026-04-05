@@ -19,7 +19,14 @@
       "Bash(rm -rf \"logos-pagrow/VECTOR\")",
       "Bash(rm -rf \"assets/images/PAGROW_PRODUCTOS RECORTADOS\")",
       "Bash(rm -f \"assets/images/PAGROW_PRODUCTOS RECORTADOS.zip\")",
-      "Bash(rm pagrow-catalog.html)"
+      "Bash(rm pagrow-catalog.html)",
+      "Bash(cp \"Bioestimulación/RAISOL.pdf\" raisol.pdf)",
+      "Bash(cp \"Bioestimulación/TYRON.pdf\" tyron.pdf)",
+      "Bash(cp \"Correctores nutricionales/AGROZYME.pdf\" agrozyme.pdf)",
+      "Bash(cp \"Correctores nutricionales/ALGAMAR.pdf\" algamar.pdf)",
+      "Bash(cp \"Correctores nutricionales/BORTAMIN.pdf\" brotamin.pdf)",
+      "Bash(ls assets/pdfs/*.pdf)",
+      "Bash(ls *.pdf)"
     ]
   }
 }

@@ -246,7 +246,7 @@ window.openModal = function (id) {
 
     <div class="modal-actions">
       ${safePdf ? `<a href="${safePdf}" class="btn-download" target="_blank" rel="noopener noreferrer">Ver ficha técnica (PDF)</a>` : ""}
-      <a href="#" class="btn-contact" onclick="return false;">Consultar con un agrónomo</a>
+      <a href="https://wa.me/593999406826?text=${encodeURIComponent(`Me interesa el producto *${p.name}* de Pagrow. ¿Podrían darme más información?`)}" class="btn-contact" target="_blank" rel="noopener noreferrer">Consultar con un agrónomo</a>
     </div>
   `;
 
