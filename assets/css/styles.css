@@ -255,19 +255,6 @@ body {
     color: var(--text-dark);
     font-weight: 600;
 }
-.sort-btn {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--forest);
-    background: rgba(26, 51, 34, 0.07);
-    border: none;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: var(--radius-sm);
-}
 
 /* ══════════════════ CATEGORY BANNER ══════════════════ */
 .cat-banner {
