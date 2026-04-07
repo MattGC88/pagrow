@@ -66,7 +66,8 @@ const categories = [
         composition:
           "Extracto de algas marinas frías 40%, Citoquininas naturales 0.02%, Betaínas 0.8%, Manitol 2%, Polisacáridos 3.5%.",
         application: "Foliar y suelo. Dosis: 1–1.5 cc/L o 2–3 L/ha.",
-        tag: "Generación de raíces",
+        tag: "Defensa y antiestrés",
+        badge: "Orgánico",
       },
       {
         id: "algavit",
@@ -107,7 +108,8 @@ const categories = [
           "Celulasas, Amilasas, Lipasas, Fosfatasas orgánicas, Proteasas, Xilanasas. Actividad enzimática ≥ 40.000 U/mL.",
         application:
           "Aplicación al suelo vía drench o riego por goteo. Dosis: 2–3 cc/L.",
-        tag: "Generación de raíces",
+        tag: "Defensa y antiestrés",
+        badge: "Orgánico",
       },
       {
         id: "plantamin",
@@ -148,6 +150,7 @@ const categories = [
           "Aminoácidos totales 60%, Citoquininas 0.03%, Extracto de levadura 8%, Nitrógeno total 10%, Magnesio 0.5%.",
         application: "Foliar en inicio de ciclo. Dosis: 1.5–2 cc/L.",
         tag: "Defensa y antiestrés",
+        badge: "Orgánico",
       },
 
       {
@@ -170,6 +173,7 @@ const categories = [
         application:
           "Foliar en prefloración y plena floración. Dosis: 1–2 cc/L.",
         tag: "Defensa y antiestrés",
+        badge: "Orgánico",
       },
 
       {
@@ -254,6 +258,7 @@ const categories = [
         application:
           "Foliar de emergencia. Dosis: 2–3 cc/L hasta recuperación.",
         tag: "Defensa y antiestrés",
+        badge: "Orgánico",
       },
     ],
   },
@@ -326,6 +331,7 @@ const categories = [
           "Nitrógeno total 8%, P2O5 6%, K2O 6%, Ácidos húmicos 5%, Aminoácidos 12%, Carbono orgánico 15%.",
         application: "Riego o fertirrigación. Dosis: 3–5 cc/L o 4–6 L/ha.",
         tag: "Suelo",
+        badge: "Orgánico",
       },
 
       {
@@ -334,7 +340,12 @@ const categories = [
         image: "assets/images/hidroliberex_peque.webp",
         pdf: "assets/pdfs/desbloqueo-y-establecimiento-de-microorganismos/hidroliberex-45.pdf",
         shortDesc:
-          "A base de ácidos carboxílicos y fúlvicos. Incrementa la absorción de nutrientes, mejora la permeabilidad y aireación, solubiliza el fósforo y aumenta el intercambio catiónico.",
+          "Base de ácidos carboxílicos y fúlvicos,
+          incrementa la absorción, asimilación y movilización
+          de nutrientes. Se puede aplicar de forma foliar o al suelo.
+          Mejora la permeabilidad y la aireación, y ayuda a solubilizar
+          el fósforo. Además, aumenta el intercambio catiónico,
+          favoreciendo el desarrollo de la población microbiana.",
         fullDesc:
           "Hidroliberex actúa como agente de liberación química y biológica a base de ácidos carboxílicos y fúlvicos. Incrementa la absorción, asimilación y movilización de nutrientes. Se puede aplicar foliar o al suelo. Mejora la permeabilidad y la aireación, ayuda a solubilizar el fósforo, aumenta el intercambio catiónico y favorece el desarrollo de la población microbiana.",
         benefits: [
@@ -347,6 +358,7 @@ const categories = [
           "Ácidos cítrico y oxálico orgánicos 12%, EDDS biodegradable 3%, Azufre elemental 5%, Ácidos fúlvicos 8%.",
         application: "Drench o incorporado al suelo. Dosis: 2–4 L/ha.",
         tag: "Suelo",
+        badge: "Orgánico",
       },
     ],
   },

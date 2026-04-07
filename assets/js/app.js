@@ -152,7 +152,6 @@ function renderCard(p) {
 // ════════════════════════════════════════════
 const DECO_MAP = {
   arbusfort: "assets/images/decoracion-fichas/ARBUSFORT.png",
-  hidroliberex: "assets/images/decoracion-fichas/HIDROLIBEREX_DECO.png",
   beauvetic: "assets/images/decoracion-fichas/beauvetic_deco.png",
   bacilltic: "assets/images/decoracion-fichas/Bacilltic_deco.png",
   "trichotic-liq":
@@ -206,16 +205,6 @@ window.openModal = function (id) {
   const decoSrc = escapeHTML(getDecoSrc(p));
   const productSrc = escapeHTML(p.image || "assets/images/placeholder.webp");
 
-  const benefitsHTML = p.benefits
-    .map(
-      (b) => `
-    <div class="mbenefit-card">
-      <span class="mbenefit-icon">✓</span>
-      <span>${escapeHTML(b)}</span>
-    </div>`,
-    )
-    .join("");
-
   document.getElementById("modalBody").innerHTML = `
     <div class="modal-banner">
       <div class="modal-banner-product">
@@ -236,12 +225,8 @@ window.openModal = function (id) {
       <span class="mchip ${escapeHTML(p.cssClass)}-mchip">${escapeHTML(p.tag)}</span>
     </div>
 
-    <div class="modal-section-label">Beneficios clave</div>
-    <div class="modal-benefits-grid">${benefitsHTML}</div>
-
     <div class="modal-accordions">
-      ${buildAccordion("desc", "Descripción completa", `<p>${escapeHTML(p.fullDesc)}</p>`, false)}
-      ${buildAccordion("comp", "Composición", buildCompositionItems(p.composition), true)}
+      ${buildAccordion("desc", "Descripción completa", `<p>${escapeHTML(p.fullDesc)}</p>`, true)}
     </div>
 
     <div class="modal-actions">
