@@ -3,7 +3,7 @@ const categories = [
     id: "bioestimulantes",
     name: "Bioestimulantes",
     description:
-      "Formulaciones para potenciar el desarrollo radicular y las defensas naturales de la planta. La combinación de generadores de raíces con bioestimulantes de antiestrés es la clave para cultivos con buen anclaje, alta productividad y resistencia ante el cambio climático.",
+      "El cambio climático hoy es un factor determinante en el funcionamiento de las plantas y sus procesos hormonales. El balance de estos es lo que mantiene a la plantación más preparada para el estrés y las enfermedades. Ideal aplicar siempre en combinación con los correctores de deficiencias que necesite la plantación.",
     cssClass: "cat-bio",
     products: [
       {
@@ -553,6 +553,15 @@ const categories = [
           "Foliar o fertirrigación. Dosis foliar: 1.5–2.5 cc/L. Fertirrigación: 3–5 L/ha.",
         tag: "Correctores",
       },
+      {
+        id: "cuforte",
+        name: "Cu-Forte",
+        image: "assets/images/cuforte.png",
+        pdf: "assets/pdfs/correctores-nutricionales/cuforte.pdf",
+        shortDesc:
+          "Cu-Forte posee una tecnología exclusiva y patentada con agentes complejantes como los HGA, aminoácidos, complementada con carbohidratos y antioxidantes de origen natural que mejora la absorción del Cobre y Azufre. La utilización adecuada de Cu-Forte tiene como resultado cultivos reforzados a nivel nutritivo y sanitario, por lo que se consigue mejores cosechas.",
+        tag: "Correctores",
+      },
     ],
   },
   {
@@ -684,6 +693,24 @@ const categories = [
         application:
           "Incorporar al sustrato: 1–2 g/L de sustrato. Tratamiento semillas: 5 g/kg.",
         tag: "Microorganismos",
+      },
+    ],
+  },
+  {
+    id: "proteccion",
+    name: "Protección de cultivos",
+    description:
+      "Los patógenos fúngicos son una amenaza constante que puede comprometer la productividad del cultivo, especialmente en condiciones de alta humedad y temperatura. Una protección preventiva con productos de alta adherencia y cobertura uniforme en la hoja es la primera línea de defensa para mantener el cultivo sano desde las etapas tempranas.",
+    cssClass: "cat-proteccion",
+    products: [
+      {
+        id: "flosul",
+        name: "Flosul",
+        image: "assets/images/flosul.png",
+        pdf: "assets/pdfs/proteccion-cultivos/flosul.pdf",
+        shortDesc:
+          "Flosul es un fungicida protectante formulado a base de azufre elemental con tecnología suspensión concentrada para aplicación foliar que se caracteriza por su excelente adherencia y uniformidad del tamaño de partícula, que garantiza una buena cobertura en la superficie de la hoja. FLOSUL tiene una acción comprobada sobre patógenos causantes de diversas enfermedades, actuando como un fungicida de acción preventiva.",
+        tag: "Protección de cultivos",
       },
     ],
   },

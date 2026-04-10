@@ -64,6 +64,7 @@ function renderCatalog() {
     suelo: "Desbloqueo y establecimiento de microorganismos",
     correctores: "Nutrición foliar",
     micro: "Microorganismos",
+    proteccion: "Protección de cultivos",
   };
 
   function buildBanner(id, title, description) {
@@ -298,9 +299,9 @@ renderCatalog();
 // ════════════════════════════════════════════
 //  HASH ROUTING
 // ════════════════════════════════════════════
-(function () {
-  const VALID = ["bioestimulantes", "suelo", "correctores", "micro"];
-  const hash = window.location.hash.slice(1); // strip leading #
+function applyHash() {
+  const VALID = ["bioestimulantes", "suelo", "correctores", "micro", "proteccion"];
+  const hash = window.location.hash.slice(1);
   if (!VALID.includes(hash)) return;
 
   activeCategory = hash;
@@ -308,10 +309,12 @@ renderCatalog();
     c.classList.toggle("active", c.dataset.cat === hash);
   });
   renderCatalog();
-  // Small delay so the page has laid out before scrolling
   setTimeout(() => {
     document
       .getElementById("catalogBody")
       .scrollIntoView({ behavior: "smooth", block: "start" });
   }, 100);
-})();
+}
+
+applyHash();
+window.addEventListener("hashchange", applyHash);

@@ -448,6 +448,10 @@ body {
     background: #e5d4ed;
     color: #5e2a6e;
 }
+.cat-proteccion .cat-tag {
+    background: #fde8d4;
+    color: #7a2e0e;
+}
 
 .card-body {
     padding: 4px 14px 12px;
@@ -1014,6 +1018,10 @@ body {
     background: #e5d4ed;
     color: #4e1a6e;
 }
+.cat-proteccion-mchip {
+    background: #fde8d4;
+    color: #7a2e0e;
+}
 
 /* ══════════════════ MODAL: BENEFITS GRID ══════════════════ */
 .modal-section-label {
@@ -1201,11 +1209,20 @@ body {
 }
 
 .about-product-card {
+    display: block;
     background: var(--white);
     border: 1px solid var(--parchment);
     border-radius: var(--radius-md);
     padding: 20px;
     box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.about-product-card:hover {
+    border-color: var(--forest);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .about-product-card-title {
