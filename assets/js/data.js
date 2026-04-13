@@ -700,7 +700,7 @@ const categories = [
     id: "proteccion",
     name: "Protección de cultivos",
     description:
-      "Soluciones a base de extractos vegetales para el control de hongos e insectos, que protegen las plantas y favorecen un manejo más sostenible del cultivo.",
+      "Soluciones para el control de hongos e insectos, que protegen las plantas y favorecen un manejo más sostenible del cultivo.",
     cssClass: "cat-proteccion",
     products: [
       {
